@@ -1,0 +1,47 @@
+.box {
+   background-color: rgb(211, 243, 243);
+   width: 605px;
+   min-height: 200px;
+   display: block;
+   margin: 0 auto;
+   border-radius: 2%;
+}
+
+
+form {
+   display: block;
+   margin: 0 auto;
+   font-size: 25px;
+   padding: 20px;
+}
+
+.countdown__input {
+   font-size: 25px;
+   border: 1px solid rgb(0, 0, 0);
+   border-radius: 5%;
+   margin-top: 20px;
+}
+
+.btn {
+   width: 100px;
+   display: block;
+   margin: 0 auto;
+}
+
+.countdown__names {
+   margin-top: 10px;
+   padding: 0 20px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   font-size: 25px;
+}
+
+.countdown__num {
+   margin-top: 10px;
+   padding: 0 20px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   font-size: 25px;
+}
