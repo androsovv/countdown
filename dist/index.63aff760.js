@@ -515,28 +515,23 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"adjPd":[function(require,module,exports) {
 var _dateFns = require("date-fns");
-const UI = {
-    DATE_TO_COUNTDOWN: document.querySelector('.countdown__input'),
-    BTN: document.querySelector('.countdown__btn')
-};
-UI.BTN.addEventListener('click', (event)=>{
+var _uiselectorsJs = require("./UIselectors.js");
+_uiselectorsJs.UI.BTN.addEventListener('click', (event)=>{
     event.preventDefault();
-    let countdownDate = _dateFns.format(new Date(UI.DATE_TO_COUNTDOWN.value), 'yyyy, MM, dd, hh, mm, ss'), nowDate = _dateFns.format(new Date(), 'yyyy, MM, dd, hh, mm, ss');
+    let countdownDate = _dateFns.format(new Date(_uiselectorsJs.UI.DATE_TO_COUNTDOWN.value), 'yyyy, MM, dd, hh, mm, ss'), nowDate = _dateFns.format(new Date(), 'yyyy, MM, dd, hh, mm, ss');
     let timer = _dateFns.intervalToDuration({
         start: new Date(...nowDate.split(",")),
         end: new Date(...countdownDate.split(","))
     });
-    // let timer2 = intervalToDuration({
-    //    start: new Date(1929, 0, 15, 12, 0, 0),
-    //    end: new Date(1968, 3, 4, 19, 5, 0)
-    //  })
-    console.log(nowDate);
-    console.log(countdownDate);
-    console.log(timer);
-    console.log(timer.days);
+    _uiselectorsJs.UI.NAMES.style.display = 'flex';
+    _uiselectorsJs.UI.YEARS.textContent = timer.years;
+    _uiselectorsJs.UI.MONTHS.textContent = timer.months;
+    _uiselectorsJs.UI.DAYS.textContent = timer.days;
+    _uiselectorsJs.UI.HOURS.textContent = timer.hours;
+    _uiselectorsJs.UI.MINUTES.textContent = timer.minutes;
 });
 
-},{"date-fns":"9yHCA"}],"9yHCA":[function(require,module,exports) {
+},{"date-fns":"9yHCA","./UIselectors.js":"8FX9W"}],"9yHCA":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 // This file is generated automatically by `scripts/build/indices.js`. Please, don't change it.
@@ -4264,6 +4259,22 @@ function validateTimezone(_hours, minutes) {
     return minutes >= 0 && minutes <= 59;
 }
 
-},{"../constants/index.js":"iOhcx","../_lib/requiredArgs/index.js":"9wUgQ","../_lib/toInteger/index.js":"f7kKX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["kQMTH","adjPd"], "adjPd", "parcelRequire4482")
+},{"../constants/index.js":"iOhcx","../_lib/requiredArgs/index.js":"9wUgQ","../_lib/toInteger/index.js":"f7kKX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8FX9W":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "UI", ()=>UI
+);
+const UI = {
+    DATE_TO_COUNTDOWN: document.querySelector('.countdown__input'),
+    BTN: document.querySelector('.countdown__btn'),
+    NAMES: document.querySelector(".countdown__names"),
+    YEARS: document.querySelector(".countdown__years"),
+    MONTHS: document.querySelector(".countdown__months"),
+    DAYS: document.querySelector(".countdown__days"),
+    HOURS: document.querySelector(".countdown__hours"),
+    MINUTES: document.querySelector(".countdown__minutes")
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["kQMTH","adjPd"], "adjPd", "parcelRequire4482")
 
 //# sourceMappingURL=index.63aff760.js.map
